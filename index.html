@@ -1,0 +1,47 @@
+<!DOCTYPE html>
+<html lang="vi">
+<head>
+    <meta charset="UTF-8">
+    <title>Dashboard Quản lý Sản phẩm</title>
+    <link rel="stylesheet" href="style.css">
+</head>
+<body>
+    <div class="container">
+        <h1>Quản lý Sản phẩm API</h1>
+
+        <div class="toolbar">
+            <input type="text" id="txtSearch" placeholder="Nhập tiêu đề cần tìm..." />
+            
+            <div class="page-size">
+                <label>Số dòng:</label>
+                <select id="selPageSize">
+                    <option value="5">5</option>
+                    <option value="10" selected>10</option>
+                    <option value="20">20</option>
+                </select>
+            </div>
+        </div>
+
+        <table id="tblProducts">
+            <thead>
+                <tr>
+                    <th>ID</th>
+                    <th class="sortable" onclick="handleSort('title')">Tiêu đề <span id="icon-title">↕</span></th>
+                    <th class="sortable" onclick="handleSort('price')">Giá ($) <span id="icon-price">↕</span></th>
+                    <th>Hình ảnh</th>
+                    <th>Mô tả (Hover để xem)</th>
+                </tr>
+            </thead>
+            <tbody id="productData">
+                </tbody>
+        </table>
+
+        <div class="pagination">
+            <button id="btnPrev">Trang trước</button>
+            <span id="lblPageInfo">Trang 1</span>
+            <button id="btnNext">Trang sau</button>
+        </div>
+    </div>
+    <script src="script.js"></script>
+</body>
+</html>
